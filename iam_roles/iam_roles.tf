@@ -1,5 +1,3 @@
-variable "region" {}
-
 variable "master-account-id" {
   default = "false"
 }
