@@ -5,17 +5,6 @@ variable "master-account-id" {
 }
 data "aws_caller_identity" "current" {}
 
-variable aws_target_role_arn {}
-
-#Define the region
-provider "aws" {
-  region     = "${var.region}"
-
-  assume_role {
-    role_arn     = "${var.aws_target_role_arn}"
-  }
-}
-
 # Roles
 
 resource "aws_iam_role" "aviatrix-role-ec2" {
