@@ -23,11 +23,6 @@ variable "images" {
   }
 }
 
-#Define the region
-provider "aws" {
-  region     = "${var.region}"
-}
-
 resource "aws_security_group" "AviatrixSecurityGroup" {
   name        = "AviatrixSecurityGroup"
   description = "Aviatrix - Controller Security Group"
