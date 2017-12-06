@@ -23,17 +23,6 @@ variable "images" {
   }
 }
 
-variable aws_account_id {}
-
-provider "aws" {
-  region     = "${var.region}"
-
-  assume_role {
-    role_arn     = "arn:aws:iam::${var.aws_account_id}:role/terraform"
-    session_name = "AssumeRoleSession_terraform"
-  }
-}
-
 resource "aws_security_group" "AviatrixSecurityGroup" {
   name        = "AviatrixSecurityGroup"
   description = "Aviatrix - Controller Security Group"
